@@ -14,34 +14,34 @@ select {
   color: #fff;
   background-color: #1a7cff;
 }
-.button.ghost{
-    border-color: #1a7cff;
-    color: #1a7cff;
-    background-color: #fff;
+.button.ghost {
+  border-color: #1a7cff;
+  color: #1a7cff;
+  background-color: #fff;
 }
 
-.signup-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 80px 0 60px 0;
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0 60px 0;
 }
 
-.form-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-#essential-info{
-    height: 500px;
+#essential-info {
+  height: 500px;
 }
-#option-info{
-    height: 230px;
+#option-info {
+  height: 230px;
 }
-#terms{
-    height: 200px;
+#terms {
+  height: 200px;
 }
 
 .container {
@@ -50,22 +50,22 @@ select {
 }
 
 .has-button {
-    justify-content: space-between;
+  justify-content: space-between;
 }
-.has-button>input {
-    flex-basis: 220px;
+.has-button > input {
+  flex-basis: 220px;
 }
-.has-button>button{
-    flex-basis: 98px;
+.has-button > button {
+  flex-basis: 98px;
 }
 
-.container>input,button{
+.container > input,
+button {
   width: 100%;
   height: 100%;
 }
 
-
 input[type='checkbox'] {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
