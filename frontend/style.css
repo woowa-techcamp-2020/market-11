@@ -70,7 +70,7 @@ button {
   height: 100%;
 }
 
-input[type='checkbox'] {
+.container > input[type='checkbox'] {
   width: 25px;
   height: 25px;
 }
