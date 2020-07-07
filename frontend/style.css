@@ -1,44 +1,11 @@
-.logo > img {
-  margin: 0 auto;
-  width: 220px;
-}
-
-div.logo {
-  width: 325px;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.row {
-  width: 325px;
-  height: 50px;
-}
-input {
-  display: block;
-  box-sizing: border-box;
-  padding: 12px 14px;
-}
-select {
-  display: block;
-}
-.button.solid {
-  color: #fff;
-  background-color: #1a7cff;
-}
-.button.ghost {
-  border-color: #1a7cff;
-  color: #1a7cff;
-  background-color: #fff;
-}
-
 .signup-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 325px;
   padding: 80px 0 60px 0;
   margin: 0 auto;
-  width: 325px;
 }
 
 form {
@@ -57,30 +24,44 @@ form {
 #essential-info {
   height: 500px;
 }
+
 #option-info {
   height: 230px;
 }
+
 #terms {
   height: 200px;
+}
+
+.logo {
+  width: 325px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.logo > img {
+  width: 220px;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 14px;
+}
+
+select {
+  display: block;
+}
+
+.row {
+  width: 325px;
+  height: 50px;
 }
 
 .container {
   display: flex;
   align-items: center;
-}
-
-.has-button {
-  justify-content: space-between;
-}
-.has-button > input {
-  flex-basis: 220px;
-}
-.has-button > button {
-  flex-basis: 98px;
-}
-
-.email > span {
-  margin: 0 5px;
 }
 
 .container > input,
@@ -92,4 +73,31 @@ button {
 input[type='checkbox'] {
   width: 25px;
   height: 25px;
+}
+
+.has-button {
+  justify-content: space-between;
+}
+
+.has-button > input {
+  flex-basis: 220px;
+}
+
+.has-button > button {
+  flex-basis: 98px;
+}
+
+.button.solid {
+  color: #fff;
+  background-color: #1a7cff;
+}
+
+.button.ghost {
+  border-color: #1a7cff;
+  color: #1a7cff;
+  background-color: #fff;
+}
+
+.email > span {
+  margin: 0 5px;
 }
