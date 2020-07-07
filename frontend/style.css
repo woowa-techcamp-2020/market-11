@@ -77,6 +77,10 @@ form {
   flex-basis: 98px;
 }
 
+.email > span {
+  margin: 0 5px;
+}
+
 .container > input,
 button {
   width: 100%;
