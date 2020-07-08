@@ -113,6 +113,26 @@ a.small-link {
   padding-left: 9px;
 }
 
+a.to-main-arrow {
+  margin: 45px 0 25px;
+  text-decoration: none;
+  line-height: 30px;
+  color: #1a7cff;
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+a.to-main-arrow::after {
+  content: '';
+  display: inline-block;
+  margin-left: 13px;
+  width: 16px;
+  height: 16px;
+  background: url(/frontend/public/assets/arr-blue.png);
+  background-size: 16px 16px;
+}
+
 div.terms-links {
   box-sizing: border-box;
   padding: 2px 0 0 43px;
