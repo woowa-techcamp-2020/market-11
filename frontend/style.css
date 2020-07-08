@@ -83,6 +83,12 @@ a {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
 }
 
+a.small-link {
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  padding-left: 9px;
+}
+
 input {
   font-size: 16px;
   display: block;
