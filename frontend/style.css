@@ -53,9 +53,15 @@ form {
 }
 
 input {
+  font-size: 16px;
   display: block;
   box-sizing: border-box;
   padding: 12px 14px;
+  border: 1px solid #d7dbe6;
+}
+
+input::placeholder {
+  color: #cacdd6;
 }
 
 select {
