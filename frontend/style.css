@@ -82,6 +82,15 @@ input::placeholder {
 
 select {
   display: block;
+  font-size: 17px;
+  padding: 5px 14px;
+  border: 1px solid #d7dbe6;
+  -webkit-appearance: none;
+  background-image: url(https://ceo.baemin.com/cdn/ceo-moon/static/desktop/down-arrow@2x.png);
+  background-position-x: 95%;
+  background-position-y: 50%;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
 }
 
 .row {
