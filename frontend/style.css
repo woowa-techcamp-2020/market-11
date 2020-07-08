@@ -81,6 +81,7 @@ li::before {
 a {
   color: #898989;
   font-size: 14px;
+  letter-spacing: -0.4px;
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
 }
 
@@ -88,6 +89,22 @@ a.small-link {
   font-size: 12px;
   letter-spacing: -0.1px;
   padding-left: 9px;
+}
+
+div.terms-links {
+  box-sizing: border-box;
+  padding: 2px 0 0 43px;
+  height: 30px;
+}
+
+p.terms-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #898989;
+  padding: 2px 0 0 43px;
+  width: auto;
+  letter-spacing: -0.6px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
 }
 
 input {
