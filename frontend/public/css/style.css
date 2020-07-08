@@ -52,6 +52,28 @@ form {
   margin: 0 auto;
 }
 
+.complete-wrap {
+  width: 328px;
+}
+
+.complete {
+  padding: 90px 0 0;
+}
+
+.complete > h1 {
+  font-size: 40px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-family: Noto Sans KR;
+}
+
+.logo-complete > img {
+  width: 297px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
 h1 {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
 }
