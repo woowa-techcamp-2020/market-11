@@ -1,10 +1,10 @@
 module.exports = function (app, fs, db) {
-  app.get('/', function (req, res) {
+  app.get('/sign-up', function (req, res) {
     res.render('sign-up.html');
   });
 
-  app.get('/sign-up', function (req, res) {
-    res.render('sign-up.html');
+  app.get('/sign-up-complete', function (req, res) {
+    res.render('sign-up-complete.html');
   });
 
   app.post('/add-user', function (req, res) {
