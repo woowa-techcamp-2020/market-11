@@ -250,8 +250,7 @@ button {
 
 input[type='checkbox'] {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  display: none;
   border: 0;
   background-color: transparent;
   z-index: -1;
