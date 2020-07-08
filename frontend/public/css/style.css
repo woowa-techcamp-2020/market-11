@@ -154,7 +154,7 @@ a.to-main-arrow::after {
   margin-left: 13px;
   width: 16px;
   height: 16px;
-  background: url(/frontend/public/assets/arr-blue.png);
+  background: url(../assets/arr-blue.png);
   background-size: 16px 16px;
 }
 
