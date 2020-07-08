@@ -60,6 +60,21 @@ li {
   color: #898989;
   font-size: 12px;
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  letter-spacing: -0.2px;
+  position: relative;
+  margin: 10px 0 0 9px;
+}
+
+.valid-disc li::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: -8px;
+  width: 3px;
+  height: 3px;
+  background: #bbc0cd;
+  border-radius: 50%;
 }
 
 a {
