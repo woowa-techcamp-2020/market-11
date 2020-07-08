@@ -155,6 +155,10 @@ button {
   background-color: #fff;
 }
 
+.button.primary {
+  font-size: 18px;
+}
+
 .email > span {
   width: 25px;
   text-align: center;
