@@ -61,6 +61,7 @@ li {
   font-size: 12px;
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
   letter-spacing: -0.2px;
+  line-height: 12px;
   position: relative;
   margin: 10px 0 0 9px;
 }
