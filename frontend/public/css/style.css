@@ -52,6 +52,33 @@ form {
   margin: 0 auto;
 }
 
+.complete-wrap {
+  width: 328px;
+  margin-left: 32px;
+}
+
+.complete {
+  padding: 90px 0 0;
+}
+
+.complete > h1 {
+  font-size: 40px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-family: Noto Sans KR;
+}
+
+.logo-complete > img {
+  width: 297px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+.complete-desc > li > a {
+  color: #898989;
+}
+
 h1 {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
 }
@@ -78,7 +105,27 @@ li::before {
   border-radius: 50%;
 }
 
-a {
+dl.sign-up-info {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #d7dbe6;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+dl.sign-up-info > dt {
+  color: #898989;
+  width: 60px;
+  margin: 10px 5px;
+  display: block;
+}
+
+dl.sign-up-info > dd {
+  width: 226px;
+  margin: 10px 0;
+}
+
+.terms-links > a {
   color: #898989;
   font-size: 14px;
   letter-spacing: -0.4px;
@@ -89,6 +136,26 @@ a.small-link {
   font-size: 12px;
   letter-spacing: -0.1px;
   padding-left: 9px;
+}
+
+a.to-main-arrow {
+  margin: 45px 0 25px;
+  text-decoration: none;
+  line-height: 30px;
+  color: #1a7cff;
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+a.to-main-arrow::after {
+  content: '';
+  display: inline-block;
+  margin-left: 13px;
+  width: 16px;
+  height: 16px;
+  background: url(../assets/arr-blue.png);
+  background-size: 16px 16px;
 }
 
 div.terms-links {
