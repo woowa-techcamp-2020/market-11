@@ -148,6 +148,12 @@ button {
   background-color: #fff;
 }
 
+.button.disable {
+  border-color: #bbc0cd;
+  color: #bbc0cd;
+  background-color: #fff;
+}
+
 .email > span {
   width: 25px;
   text-align: center;
