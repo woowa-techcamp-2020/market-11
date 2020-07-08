@@ -25,6 +25,14 @@ form {
   height: 500px;
 }
 
+#essential-info > h1 {
+  margin-bottom: 20px;
+  line-height: 25px;
+  letter-spacing: -0.4px;
+  color: #212329;
+  font-weight: normal;
+}
+
 #option-info {
   height: 240px;
 }
