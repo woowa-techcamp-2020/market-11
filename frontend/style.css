@@ -65,7 +65,7 @@ li {
   margin: 10px 0 0 9px;
 }
 
-.valid-disc li::before {
+li::before {
   content: '';
   position: absolute;
   display: block;
