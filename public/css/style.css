@@ -133,6 +133,7 @@ dl.sign-up-info > dd {
 }
 
 a.small-link {
+  color: #898989;
   font-size: 12px;
   letter-spacing: -0.1px;
   padding-left: 9px;
