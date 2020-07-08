@@ -100,6 +100,26 @@ li::before {
   border-radius: 50%;
 }
 
+dl.sign-up-info {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #d7dbe6;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+dl.sign-up-info > dt {
+  color: #898989;
+  width: 60px;
+  margin: 10px 5px;
+  display: block;
+}
+
+dl.sign-up-info > dd {
+  width: 226px;
+  margin: 10px 0;
+}
+
 a {
   color: #898989;
   font-size: 14px;
