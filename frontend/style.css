@@ -124,7 +124,23 @@ button {
 }
 
 label {
+  position: relative;
+  font-size: 14px;
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  padding-left: 35px;
+}
+
+label::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -4px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: url(https://ceo.baemin.com/cdn/ceo-moon/static/mobile/main/sp-inputs.png);
+  background-position: -60px 0;
+  background-size: 120px 25px;
 }
 
 .row {
@@ -144,8 +160,12 @@ button {
 }
 
 .container > input[type='checkbox'] {
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  background-color: transparent;
+  z-index: -1;
 }
 
 .has-button {
