@@ -12,7 +12,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 1185px;
+  height: 1150px;
 }
 
 .form-section {
@@ -34,11 +34,11 @@ form {
 }
 
 #option-info {
-  height: 240px;
+  height: 230px;
 }
 
 #terms {
-  height: 200px;
+  height: 230px;
 }
 
 .logo {
