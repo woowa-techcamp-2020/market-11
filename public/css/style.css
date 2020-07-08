@@ -266,6 +266,7 @@ input[type='checkbox']:checked + label::after {
 }
 
 .has-button > input {
+  max-width: 220px;
   flex-basis: 220px;
 }
 
