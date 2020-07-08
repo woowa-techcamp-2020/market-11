@@ -1,13 +1,5 @@
-module.exports = function (app, fs, db) {
-  app.get('/sign-up', function (req, res) {
-    res.render('sign-up.html');
-  });
-
-  app.get('/sign-up-complete', function (req, res) {
-    res.render('sign-up-complete.html');
-  });
-
-  app.post('/add-user', function (req, res) {
+exports.modules = {
+  createUser: function (req, res) {
     const user = {
       id: req.body['id'],
       password: req.body['password'],
@@ -26,5 +18,5 @@ module.exports = function (app, fs, db) {
       res.json(result);
       console.log('저장 완료');
     });
-  });
+  },
 };
