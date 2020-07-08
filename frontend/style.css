@@ -52,6 +52,22 @@ form {
   margin: 0 auto;
 }
 
+h1 {
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+}
+
+li {
+  color: #898989;
+  font-size: 12px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+}
+
+a {
+  color: #898989;
+  font-size: 14px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+}
+
 input {
   font-size: 16px;
   display: block;
