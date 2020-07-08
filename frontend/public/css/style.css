@@ -74,6 +74,10 @@ form {
   margin-bottom: 12px;
 }
 
+.complete-desc > li > a {
+  color: #898989;
+}
+
 h1 {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
 }
@@ -120,7 +124,7 @@ dl.sign-up-info > dd {
   margin: 10px 0;
 }
 
-a {
+.terms-links > a {
   color: #898989;
   font-size: 14px;
   letter-spacing: -0.4px;
