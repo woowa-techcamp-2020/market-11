@@ -22,4 +22,5 @@ app.use(express.static('../frontend/public')); // 정적파일의 루트 지정 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+const router = require('./router/main')(app, fs, db); // main.js 에서 export한 함수에 app을 파라미터로 넣어줌.
 // 라우터 모듈인 main.js를 불러와서 app에 전달해줌
