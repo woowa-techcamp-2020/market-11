@@ -248,13 +248,17 @@ button {
   height: 100%;
 }
 
-.container > input[type='checkbox'] {
+input[type='checkbox'] {
   position: absolute;
   width: 1px;
   height: 1px;
   border: 0;
   background-color: transparent;
   z-index: -1;
+}
+
+input[type='checkbox']:checked + label::after {
+  background-position: -90px 0;
 }
 
 .has-button {
