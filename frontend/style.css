@@ -100,6 +100,10 @@ button {
   border: 1px solid;
 }
 
+label {
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+}
+
 .row {
   width: 325px;
   height: 50px;
