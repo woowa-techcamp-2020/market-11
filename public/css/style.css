@@ -383,7 +383,8 @@ input[type='checkbox']:checked + label::after {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
   letter-spacing: -0.2px;
   line-height: 13px;
-=======
+}
+
 .notice-content {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
   font-size: 14px;
