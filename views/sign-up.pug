@@ -39,10 +39,10 @@ head
         label(for='option-info-check') 선택 정보를 입력하시겠어요?
         a.small-link(href='https://ceo.baemin.com/#/policy/history?position=collectionAndUsageNormal' target='_blank') 내용보기
       .row.container.has-button
-        input#zipcode.disable(name='zipcode' placeholder='우편번호')
-        button.button.disable 주소찾기
-      input#address.row.disable(name='address' placeholder='주소')
-      input#address-detail.row.disable(name='address-detail' placeholder='상세 주소')
+        input#zipcode.disable(name='zipcode' placeholder='우편번호' disabled)
+        button#find-address.button.disable(type='button' disabled) 주소찾기
+      input#address.row.disable(name='address' placeholder='주소' disabled)
+      input#address-detail.row.disable(name='address-detail' placeholder='상세 주소' disabled)
     section#terms.form-section(name='terms')
       h1.row.container.has-checkbox
         input#all-terms(type='checkbox' name='all-terms')
@@ -63,4 +63,8 @@ head
         li 만 14세 이상 회원만 가입 가능합니다.
           a.small-link(href='#') 내용보기
     button.row.button.solid.primary(type='submit') 가입완료
+    div#modal
+      div#layer
+        img#close-layer-btn(src='//t1.daumcdn.net/postcode/resource/images/close.png' alt='닫기 버튼')
+script(type='text/javascript' src='https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js')
 script(type='text/javascript' src='js/index.js')

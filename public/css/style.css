@@ -305,3 +305,31 @@ input[type='checkbox']:checked + label::after {
   text-align: center;
   font-family: 'NotoSansKR';
 }
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#layer {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+#close-layer-btn {
+  cursor: pointer;
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  z-index: 1;
+}

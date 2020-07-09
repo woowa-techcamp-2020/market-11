@@ -42,3 +42,69 @@ const toggleAddress = (e) => {
 };
 
 optionInfoCheck.addEventListener('click', toggleAddress);
+
+const findAddressBtn = document.getElementById('find-address');
+
+let modal = document.getElementById('modal');
+let elementLayer = document.getElementById('layer');
+let closeBtn = document.getElementById('close-layer-btn');
+
+function closeModal(e) {
+  modal.style.display = 'none';
+}
+
+function execDaumPostcode() {
+  new daum.Postcode({
+    oncomplete: function (data) {
+      let addr = '';
+      let extraAddr = '';
+
+      if (data.userSelectedType === 'R') {
+        addr = data.roadAddress;
+      } else {
+        addr = data.jibunAddress;
+      }
+
+      document.getElementById('zipcode').value = data.zonecode;
+      document.getElementById('address').value = addr;
+      document.getElementById('address-detail').focus();
+
+      modal.style.display = 'none';
+    },
+    width: '100%',
+    height: '100%',
+    maxSuggestItems: 5,
+  }).embed(elementLayer);
+
+  elementLayer.style.display = 'block';
+
+  initLayerPosition();
+}
+
+function initLayerPosition() {
+  let width = 300;
+  let height = 400;
+  let borderWidth = 5;
+
+  elementLayer.style.width = width + 'px';
+  elementLayer.style.height = height + 'px';
+  elementLayer.style.border = borderWidth + 'px solid';
+
+  elementLayer.style.left =
+    ((window.innerWidth || document.documentElement.clientWidth) - width) / 2 - borderWidth + 'px';
+  elementLayer.style.top =
+    ((window.innerHeight || document.documentElement.clientHeight) - height) / 2 -
+    borderWidth +
+    'px';
+}
+
+const openModal = (e) => {
+  if (e.target.className.includes('enable')) {
+    modal.style.display = 'block';
+    execDaumPostcode();
+  }
+};
+
+optionInfo.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', closeModal);
