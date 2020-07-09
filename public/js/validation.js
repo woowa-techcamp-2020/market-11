@@ -18,6 +18,11 @@ inputId.addEventListener('blur', function(event){
     const message = validateId(id);
     handleErrorMessage(errorId, message);
 });
+inputPassword.addEventListener('blur', function(event){
+    const password = event.target.value;
+    const message = validatePassword(password);
+    handleErrorMessage(errorPassword, message);
+});
 /**
  * 에러 메세지가 있을 경우 에러 영역에 메세지 추가하고 hidden 속성 제거
  * 에러 메세지가 없을 경우 hidden 속성 추가하여 에러메세지 가림
@@ -46,6 +51,22 @@ function validateId(id){
         return '';
     }else{
         return '아이디는 영문과 숫자로 4자~20자 사이로 입력해 주세요.';
+    }
+}
+
+/**
+ * @param {string} password 
+ * @returns {string} 유효한 비밀번호면 빈 문자열, 아닌 경우 에러 문자열 반환
+ */
+function validatePassword(password){
+    if(password.length === 0){
+        return '비밀번호를 입력해 주세요.';
+    }
+    const regExp = /^(?=.*\d)(?=.*[a-zA-Z]).{8,20}$/;
+    if(regExp.test(password)){
+        return '';
+    }else{
+        return '비밀번호는 영문과 숫자를 포함하여 8~20자로 입력해 주세요.';
     }
 }
 
