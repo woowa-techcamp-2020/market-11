@@ -44,6 +44,12 @@ inputName.addEventListener('blur', function(event){
     const message = validateName(name);
     handleErrorMessage(errorName, message);
 });
+inputPhone.addEventListener('blur', function(event){
+    const phone = event.target.value;
+    const message = validatePhone(phone);
+    handleErrorMessage(errorPhone, message);
+});
+
 /**
  * 에러 메세지가 있을 경우 에러 영역에 메세지 추가하고 hidden 속성 제거
  * 에러 메세지가 없을 경우 hidden 속성 추가하여 에러메세지 가림
@@ -155,5 +161,21 @@ function validateName(name){
         return '';
     }else{
         return '이름에 특수문자, 숫자는 입력하실 수 없습니다. 다시 입력해 주세요.';
+    }
+}
+
+/**
+ * @param {string} phone
+ * @returns {strig} 전화번호가 유효하면 빈 문자열, 아닌 경우 에러 문자열 반환
+ */
+function validatePhone(phone){
+    if(phone.length === 0){
+        return '휴대폰 번호를 입력해 주세요.';
+    }
+    const regExp = /^01[0-9]{8,9}$/;
+    if(regExp.test(phone)){
+        return '';
+    }else{
+        return '휴대폰 번호를 확인해 주세요.';
     }
 }
