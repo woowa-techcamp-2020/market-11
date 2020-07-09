@@ -73,6 +73,8 @@ const insertCloseBtn = (el) => {
 };
 
 function removeModal(e) {
+  if (e.target.tagName === 'STRONG') return;
+  if (e.target.className === 'notice-content') return;
   document.getElementById('modal').remove();
 }
 
@@ -121,7 +123,7 @@ function initLayerPosition(layer) {
     'px';
 }
 
-const openModal = (e) => {
+const openAddressModal = (e) => {
   if (e.target.className.includes('enable')) {
     let modal = createModal();
     let layer = insertLayer(modal);
@@ -131,4 +133,65 @@ const openModal = (e) => {
   }
 };
 
-optionInfo.addEventListener('click', openModal);
+optionInfo.addEventListener('click', openAddressModal);
+
+const phoneInput = document.getElementById('phone');
+const verifyBtn = phoneInput.nextSibling;
+
+const isValidPhoneNumber = (e) => {
+  let input = e.target.value;
+  phoneInput.value = input.replace(/[^0-9]/g, '');
+  if (phoneInput.value) {
+    verifyBtn.classList.remove('disable');
+    verifyBtn.classList.add('enable');
+    verifyBtn.removeAttribute('disabled');
+  } else {
+    verifyBtn.classList.remove('enable');
+    verifyBtn.classList.add('disable');
+    verifyBtn.setAttribute('disabled', '');
+  }
+};
+
+const authPhone = () => {
+  sendNumber();
+  popUpNotice();
+};
+
+const sendNumber = () => {
+  const verifyNum = '000000';
+  alert(`인증 번호는 ${verifyNum} 입니다.`);
+};
+
+const popUpNotice = () => {
+  let modal = createModal();
+  let layer = insertLayer(modal);
+  layer.setAttribute('class', 'notice');
+  insertNotice(layer);
+
+  modal.style.display = 'block';
+  modal.addEventListener('click', removeModal);
+};
+
+const insertNotice = (layer) => {
+  let noticeContent = document.createElement('div');
+  noticeContent.setAttribute('class', 'notice-content');
+  layer.appendChild(noticeContent);
+
+  let noticeTitle = document.createElement('strong');
+  noticeTitle.innerText = '인증번호를 발송했습니다.';
+  noticeContent.appendChild(noticeTitle);
+
+  let br = document.createElement('br');
+  noticeContent.appendChild(br);
+
+  let desc = document.createTextNode('휴대폰 SMS 발송된 인증번호를 확인해 주세요.');
+  noticeContent.appendChild(desc);
+
+  let noticeBtn = document.createElement('button');
+  noticeBtn.setAttribute('class', 'notice-btn');
+  noticeBtn.innerText = '확인';
+  layer.appendChild(noticeBtn);
+};
+
+phoneInput.addEventListener('input', isValidPhoneNumber);
+verifyBtn.addEventListener('click', authPhone);
