@@ -327,11 +327,11 @@ input[type='checkbox']:checked + label::after {
   z-index: 1;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.error-message{
+.error-message {
   font-size: 14px;
   line-height: 22px;
   letter-spacing: -0.4px;
@@ -339,6 +339,6 @@ input[type='checkbox']:checked + label::after {
   font-weight: normal;
 }
 
-.error-input{
+.error-input {
   border-color: #f52926;
 }
