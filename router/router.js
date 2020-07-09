@@ -9,6 +9,10 @@ module.exports = function (app, db) {
     res.render('login.pug');
   });
 
+  app.post('/login', function (req, res) {
+    utils.validateUser(req, res, db);
+  });
+
   app.get('/sign-up-complete', function (req, res) {
     res.render('sign-up-complete.pug');
   });
