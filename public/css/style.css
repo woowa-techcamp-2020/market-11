@@ -351,7 +351,8 @@ input[type='checkbox']:checked + label::after {
   z-index: 1;
 }
 
-.login-container {
+.login-container,
+.main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -442,4 +443,25 @@ input[type='checkbox']:checked + label::after {
 
 .error-input {
   border-color: #f52926;
+}
+
+.main-container #notice {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.main-container .signup,
+.main-container .find-id-password {
+  margin-left: 20px;
+  float: right;
+}
+
+.main-container a,
+.main-container span {
+  text-decoration: none;
+  color: #898989;
+  font-size: 13px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  letter-spacing: -0.2px;
+  line-height: 13px;
 }
