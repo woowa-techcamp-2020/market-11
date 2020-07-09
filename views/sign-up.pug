@@ -12,16 +12,16 @@ head
     section#essential-info.form-section(name='essential-info')
       h1 필수 정보를 입력해 주세요.
       input#id.row(name='id' placeholder='아이디* (4~20자)')
-      p#error-id(class='hidden')
+      p#error-id(class='error-message hidden')
       input#password.row(type='password' name='password' placeholder='비밀번호* (영문+숫자, 8~20자)')
-      p#error-password(class='hidden')
+      p#error-password(class='error-message hidden')
       input#password-check.row(type='password' name='password-check' placeholder='비밀번호 재확인*')
-      p#error-password-check(class='hidden')
+      p#error-password-check(class='error-message hidden')
       .row.container.email
         input#email-id(name='email-id' placeholder='이메일 앞자리*')
         span @
         input#email-site(name='email-site' placeholder='이메일 뒷자리*')
-      p#error-email(class='hidden')
+      p#error-email(class='error-message hidden')
       select#email-site-select.row(name='email-site-select')
         option(value='noSelected') 이메일 선택
         option(value='naver.com') naver.com
@@ -31,11 +31,11 @@ head
         option(value='gmail.com') gmail.com
         option(value='etc') 직접 입력
       input#name.row(name='name' placeholder='이름*')
-      p#error-name(class='hidden')
+      p#error-name(class='error-message hidden')
       .row.container.has-button
         input#phone(name='phone' placeholder='휴대폰*')
         button.button.disable 인증받기
-      p#error-phone(class='hidden')
+      p#error-phone(class='error-message hidden')
       ul.row
         li 인증번호 전송은 통신사에 따라 최대 1분까지 소요될 수 있습니다.
         li 인증번호가 도착하지 않을 경우 '인증번호 재전송'을 눌러주세요.
