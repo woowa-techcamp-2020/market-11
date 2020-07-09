@@ -12,17 +12,13 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 1150px;
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-#essential-info {
-  height: 500px;
+  margin-bottom: 70px;
 }
 
 #essential-info > h1 {
@@ -33,12 +29,8 @@ form {
   font-weight: normal;
 }
 
-#option-info {
-  height: 230px;
-}
-
-#terms {
-  height: 230px;
+#terms > * {
+  margin-bottom: 0;
 }
 
 .logo {
@@ -241,6 +233,7 @@ label > strong {
 .row {
   width: 325px;
   height: 50px;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -337,3 +330,4 @@ input[type='checkbox']:checked + label::after {
 .hidden{
   display: none;
 }
+
