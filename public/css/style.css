@@ -388,3 +388,11 @@ input[type='checkbox']:checked + label::after {
 #auth-container {
   display: none;
 }
+
+.timer {
+  position: absolute;
+  right: 115px;
+  color: #f52926;
+  font-size: 14px;
+  line-height: 22px;
+}

@@ -136,7 +136,7 @@ const openAddressModal = (e) => {
 optionInfo.addEventListener('click', openAddressModal);
 
 const phoneInput = document.getElementById('phone');
-const verifyBtn = phoneInput.nextSibling;
+const verifyBtn = document.querySelector('.verify-btn');
 const authContainer = document.getElementById('auth-container');
 const authInput = document.getElementById('auth');
 const authBtn = authContainer.lastChild;
@@ -160,11 +160,13 @@ const authPhone = () => {
   popUpNotice();
   changeButton();
   insertAuthContainer(verifyNum);
-  // displayTimeout();
+  createTimer();
+  startCountDown();
 };
 
+const zeroPad = (num, places) => String(num).padStart(places, '0');
+
 const sendNumber = () => {
-  const zeroPad = (num, places) => String(num).padStart(places, '0');
   let randomNumber = parseInt(Math.random() * 1000000);
   const verifyNum = zeroPad(randomNumber, 6);
   alert(`인증 번호는 ${verifyNum} 입니다.`);
@@ -206,6 +208,10 @@ const changeButton = () => {
   verifyBtn.textContent = '재전송';
 };
 
+const resetButton = () => {
+  verifyBtn.textContent = '인증받기';
+};
+
 const insertAuthContainer = (number) => {
   authContainer.style.display = 'flex';
   authContainer.value = number;
@@ -227,23 +233,39 @@ const authNumberCheck = () => {
   }
 };
 
-// const clockContainer = document.querySelector('');
+const createTimer = () => {
+  const timer = document.createElement('span');
+  timer.classList.add('timer');
+  authContainer.appendChild(timer);
+};
 
-// const displayTimeout = () => {
-//   clockTitle = clockContainer.querySelector(“h1");
-//   function getTime(){
-//     const date = new Date();
-//     const minutes = date.getMinutes();
-//     const seconds = date.getSeconds();
-//         clockTitle.innerHTML = `0${2 - minutes}:${60 - seconds}`;
-//   }
-// }
-// function init(){
-//     getTime();
-//     setInterval(getTime, 1000);
-// }
-// init();
-// }
+const startCountDown = () => {
+  let timeout = 9;
+  let timeCount = setInterval(() => {
+    timeout--;
+    const min = parseInt(timeout / 60);
+    const sec = timeout % 60;
+    let timeString = `0${min}:${sec > 10 ? sec : `0${sec}`}`;
+    displayTime(timeString);
+    if (timeout === 0) {
+      clearInterval(timeCount);
+      timeover();
+    }
+  }, 1000);
+};
+
+const displayTime = (time) => {
+  const timer = document.querySelector('.timer');
+  timer.innerText = time;
+};
+
+const timeover = () => {
+  authContainer.style.display = 'none';
+  const timer = document.querySelector('.timer');
+  timer.remove();
+  // authError.style.display = 'block';
+  resetButton();
+};
 
 phoneInput.addEventListener('input', isValidPhoneNumber);
 verifyBtn.addEventListener('click', authPhone);
