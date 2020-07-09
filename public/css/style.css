@@ -339,6 +339,10 @@ input[type='checkbox']:checked + label::after {
   font-weight: normal;
 }
 
+.valid-id {
+  color: #8e929f;
+}
+
 .error-input {
   border-color: #f52926;
 }

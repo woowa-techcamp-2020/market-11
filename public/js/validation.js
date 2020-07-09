@@ -13,49 +13,100 @@ const errorEmail = document.getElementById('error-email');
 const errorName = document.getElementById('error-name');
 const errorPhone = document.getElementById('error-phone');
 
+const inputValidateInputList = [
+  [inputId, validateInputId],
+  [inputPassword, validateInputPassword],
+  [inputPasswordCheck, validateInputPasswordCheck],
+  [inputEmailId, validateInputEmailId],
+  [inputEmailSite, validateInputEmailSite],
+  [inputName, validateInputName],
+  [inputPhone, validateInputPhone],
+];
+
 inputId.addEventListener('blur', function (event) {
   const id = event.target.value;
+  validateInputId(id);
+});
+
+function validateInputId(id) {
   const message = validateId(id);
   handleErrorMessage(errorId, message);
   handleBorderColor(inputId, message);
-});
+  if (message === '') {
+    errorId.innerText = '입력하신 아이디로 사용이 가능합니다.';
+    errorId.className = errorId.className.replace(/\bhidden\b/g, ''); // Cross-Browser 고려한 remove class name
+    errorId.classList.add('valid-id');
+  } else {
+    errorId.className = errorId.className.replace(/\bvalid-id\b/g, ''); // Cross-Browser 고려한 remove class name
+  }
+}
+
 inputPassword.addEventListener('blur', function (event) {
   const password = event.target.value;
+  validateInputPassword(password);
+});
+
+function validateInputPassword(password) {
   const message = validatePassword(password);
   handleErrorMessage(errorPassword, message);
   handleBorderColor(inputPassword, message);
-});
+}
+
 inputPasswordCheck.addEventListener('blur', function (event) {
-  const password = inputPassword.value;
   const passwordCheck = event.target.value;
+  validateInputPasswordCheck(passwordCheck);
+});
+
+function validateInputPasswordCheck(passwordCheck) {
+  const password = inputPassword.value;
   const message = validatePasswordCheck(password, passwordCheck);
   handleErrorMessage(errorPasswordCheck, message);
   handleBorderColor(inputPasswordCheck, message);
-});
+}
+
 inputEmailId.addEventListener('blur', function (event) {
   const emailId = event.target.value;
+  validateInputEmailId(emailId);
+});
+
+function validateInputEmailId(emailId) {
   const message = validateEmailId(emailId);
   handleErrorMessage(errorEmail, message);
   handleBorderColor(inputEmailId, message);
-});
+}
+
 inputEmailSite.addEventListener('blur', function (event) {
   const emailSite = event.target.value;
+  validateInputEmailSite(emailSite);
+});
+
+function validateInputEmailSite(emailSite) {
   const message = validateEmailSite(emailSite);
   handleErrorMessage(errorEmail, message);
   handleBorderColor(inputEmailSite, message);
-});
+}
+
 inputName.addEventListener('blur', function (event) {
   const name = event.target.value;
+  validateInputName(name);
+});
+
+function validateInputName(name) {
   const message = validateName(name);
   handleErrorMessage(errorName, message);
   handleBorderColor(inputName, message);
-});
+}
+
 inputPhone.addEventListener('blur', function (event) {
   const phone = event.target.value;
+  validateInputPhone(phone);
+});
+
+function validateInputPhone(phone) {
   const message = validatePhone(phone);
   handleErrorMessage(errorPhone, message);
   handleBorderColor(inputPhone, message);
-});
+}
 
 /**
  * 에러 메세지가 있을 경우 에러 영역에 메세지 추가하고 hidden 속성 제거
@@ -196,5 +247,28 @@ function validatePhone(phone) {
     return '';
   } else {
     return '휴대폰 번호를 확인해 주세요.';
+  }
+}
+
+/**
+ * @returns {boolean}
+ * 회원 가입 폼 submit 하기 전에 입력 양식을 체크하고
+ * 입력 값이 유효하면 true 반환.
+ * 입력 값이 유효하지 않은 경우 false 반환.
+ * false를 반환받으면 form submit이 동작하지 않음.
+ */
+function handleFormSubmit() {
+  inputValidateInputList.forEach((inputValidateInput) => {
+    const inputDOM = inputValidateInput[0];
+    const validateInput = inputValidateInput[1];
+    const inputText = inputDOM.value;
+    validateInput(inputText);
+  });
+  const errorInputs = document.getElementsByClassName('error-input');
+  if (errorInputs.length > 0) {
+    errorInputs[0].focus();
+    return false;
+  } else {
+    return true;
   }
 }
