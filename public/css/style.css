@@ -181,6 +181,7 @@ input {
   box-sizing: border-box;
   padding: 12px 14px;
   border: 1px solid #d7dbe6;
+  background-color: #fff;
 }
 
 input::placeholder {
@@ -283,7 +284,7 @@ input[type='checkbox']:checked + label::after {
   background-color: #1a7cff;
 }
 
-.button.ghost {
+.button.enable {
   border-color: #1a7cff;
   color: #1a7cff;
   background-color: #fff;
