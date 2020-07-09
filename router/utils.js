@@ -25,7 +25,7 @@ module.exports = {
 /**
  * 평문 비밀번호를 암호화하고 암호화된 비밀번호와 솔트 값을 리턴
  * @param {string} password 
- * @returns {{string, string}} {encryptedPassword, salt}
+ * @returns {Promise<{encryptedPassword : string, salt : string}>} promise
  */
 function getEncryptedPasswordAndSalt(password){
   const crypto = require('crypto');
