@@ -137,6 +137,9 @@ optionInfo.addEventListener('click', openAddressModal);
 
 const phoneInput = document.getElementById('phone');
 const verifyBtn = phoneInput.nextSibling;
+const authContainer = document.getElementById('auth-container');
+const authInput = document.getElementById('auth');
+const authBtn = authInput.nextSibling;
 
 const isValidPhoneNumber = (e) => {
   let input = e.target.value;
@@ -153,14 +156,18 @@ const isValidPhoneNumber = (e) => {
 };
 
 const authPhone = () => {
-  sendNumber();
+  const verifyNum = sendNumber();
   popUpNotice();
   changeButton();
+  insertAuthContainer(verifyNum);
 };
 
 const sendNumber = () => {
-  const verifyNum = '000000';
+  const zeroPad = (num, places) => String(num).padStart(places, '0');
+  let randomNumber = parseInt(Math.random() * 1000000);
+  const verifyNum = zeroPad(randomNumber, 6);
   alert(`인증 번호는 ${verifyNum} 입니다.`);
+  return verifyNum;
 };
 
 const popUpNotice = () => {
@@ -198,8 +205,22 @@ const changeButton = () => {
   verifyBtn.textContent = '재전송';
 };
 
+const insertAuthContainer = (number) => {
+  authContainer.style.display = 'flex';
+  authContainer.value = number;
+};
+
+const authNumberCheck = () => {
+  if (authContainer.value === authInput.value) {
+    alert('인증 성공');
+  } else {
+    alert('인증 실패');
+  }
+};
+
 phoneInput.addEventListener('input', isValidPhoneNumber);
 verifyBtn.addEventListener('click', authPhone);
+authBtn.addEventListener('click', authNumberCheck);
 
 const emailSelect = document.getElementById('email-site-select');
 const emailSite = document.getElementById('email-site');
