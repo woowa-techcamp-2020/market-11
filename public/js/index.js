@@ -139,7 +139,7 @@ const phoneInput = document.getElementById('phone');
 const verifyBtn = phoneInput.nextSibling;
 const authContainer = document.getElementById('auth-container');
 const authInput = document.getElementById('auth');
-const authBtn = authInput.nextSibling;
+const authBtn = authContainer.lastChild;
 
 const isValidPhoneNumber = (e) => {
   let input = e.target.value;
@@ -160,6 +160,7 @@ const authPhone = () => {
   popUpNotice();
   changeButton();
   insertAuthContainer(verifyNum);
+  // displayTimeout();
 };
 
 const sendNumber = () => {
@@ -212,11 +213,37 @@ const insertAuthContainer = (number) => {
 
 const authNumberCheck = () => {
   if (authContainer.value === authInput.value) {
-    alert('인증 성공');
+    authContainer.style.display = 'none';
+
+    phoneInput.setAttribute('disabled', '');
+    phoneInput.classList.remove('enable');
+    phoneInput.classList.add('completed');
+
+    verifyBtn.setAttribute('disabled', '');
+    verifyBtn.classList.remove('enable');
+    verifyBtn.classList.add('completed');
   } else {
     alert('인증 실패');
   }
 };
+
+// const clockContainer = document.querySelector('');
+
+// const displayTimeout = () => {
+//   clockTitle = clockContainer.querySelector(“h1");
+//   function getTime(){
+//     const date = new Date();
+//     const minutes = date.getMinutes();
+//     const seconds = date.getSeconds();
+//         clockTitle.innerHTML = `0${2 - minutes}:${60 - seconds}`;
+//   }
+// }
+// function init(){
+//     getTime();
+//     setInterval(getTime, 1000);
+// }
+// init();
+// }
 
 phoneInput.addEventListener('input', isValidPhoneNumber);
 verifyBtn.addEventListener('click', authPhone);

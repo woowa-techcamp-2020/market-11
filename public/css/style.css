@@ -267,6 +267,7 @@ input[type='checkbox']:checked + label::after {
 }
 
 .has-button {
+  position: relative;
   justify-content: space-between;
 }
 
@@ -294,6 +295,15 @@ input[type='checkbox']:checked + label::after {
   border-color: #bbc0cd;
   color: #bbc0cd;
   background-color: #fff;
+}
+
+.button.completed {
+  border-color: #f8f9fa;
+  color: #bbc0cd;
+}
+
+.completed {
+  color: #8e929f;
 }
 
 .button.primary {
