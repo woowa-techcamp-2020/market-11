@@ -443,3 +443,12 @@ input[type='checkbox']:checked + label::after {
 .error-input {
   border-color: #f52926;
 }
+
+.invisible {
+  display: block;
+  visibility: hidden;
+}
+
+#error-id-password {
+  height: 22px;
+}
