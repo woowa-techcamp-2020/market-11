@@ -10,6 +10,6 @@ module.exports = function (app, db) {
   });
 
   app.post('/add-user', function (req, res) {
-    utils.createUser(req, res);
+    utils.createUser(req, res, db);
   });
 };

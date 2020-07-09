@@ -1,4 +1,5 @@
 module.exports = {
+  createUser: async function (req, res, db) {
     const user = {
       id: req.body['id'],
       password: req.body['password'],
