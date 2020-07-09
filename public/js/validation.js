@@ -23,6 +23,12 @@ inputPassword.addEventListener('blur', function(event){
     const message = validatePassword(password);
     handleErrorMessage(errorPassword, message);
 });
+inputPasswordCheck.addEventListener('blur', function(event){
+    const password = inputPassword.value;
+    const passwordCheck = event.target.value;
+    const message = validatePasswordCheck(password, passwordCheck);
+    handleErrorMessage(errorPasswordCheck, message);
+});
 /**
  * 에러 메세지가 있을 경우 에러 영역에 메세지 추가하고 hidden 속성 제거
  * 에러 메세지가 없을 경우 hidden 속성 추가하여 에러메세지 가림
@@ -70,3 +76,17 @@ function validatePassword(password){
     }
 }
 
+/**
+ * @param {string} passwordCheck
+ * @returns {string} 비밀번호와 일치하면 빈 문자열 아닌 경우 에러 문자열 반환
+ */
+function validatePasswordCheck(password, passwordCheck){
+    if(passwordCheck.length === 0){
+        return '비밀번호 확인을 위해 한번 더 입력해 주세요.';
+    }
+    if(password === passwordCheck){
+        return '';
+    }else{
+        return '위 비밀번호와 일치하지 않습니다. 다시 입력해 주세요.';
+    }
+}
