@@ -39,6 +39,11 @@ inputEmailSite.addEventListener('blur', function(event){
     const message = validateEmailSite(emailSite);
     handleErrorMessage(errorEmail, message);
 });
+inputName.addEventListener('blur', function(event){
+    const name = event.target.value;
+    const message = validateName(name);
+    handleErrorMessage(errorName, message);
+});
 /**
  * 에러 메세지가 있을 경우 에러 영역에 메세지 추가하고 hidden 속성 제거
  * 에러 메세지가 없을 경우 hidden 속성 추가하여 에러메세지 가림
@@ -130,5 +135,25 @@ function validateEmailSite(emailSite){
         return '';
     }else{
         return '이메일 주소를 확인해 주세요.';
+    }
+}
+
+
+/**
+ * @param {string} name
+ * @returns {strig} 사용자 이름이 유효하면 빈 문자열, 아닌 경우 에러 문자열 반환
+ */
+function validateName(name){
+    if(name.length === 0){
+        return '이름을 입력해 주세요.';
+    }
+    if(name.length === 1){
+        return '2자 이상으로 입력해 주세요.';
+    }
+    const regExp = /^[가-힣a-zA-Z]+$/;
+    if(regExp.test(name)){
+        return '';
+    }else{
+        return '이름에 특수문자, 숫자는 입력하실 수 없습니다. 다시 입력해 주세요.';
     }
 }
