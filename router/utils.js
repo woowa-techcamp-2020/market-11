@@ -3,7 +3,6 @@ module.exports = {
     const user = {
       id: req.body['id'],
       password: req.body['password'],
-      passwordCheck: req.body['passwordCheck'],
       emailId: req.body['emailId'],
       emailSite: req.body['emailSite'],
       name: req.body['name'],
