@@ -29,6 +29,16 @@ inputPasswordCheck.addEventListener('blur', function(event){
     const message = validatePasswordCheck(password, passwordCheck);
     handleErrorMessage(errorPasswordCheck, message);
 });
+inputEmailId.addEventListener('blur', function(event){
+    const emailId = event.target.value;
+    const message = validateEmailId(emailId);
+    handleErrorMessage(errorEmail, message);
+});
+inputEmailSite.addEventListener('blur', function(event){
+    const emailSite = event.target.value;
+    const message = validateEmailSite(emailSite);
+    handleErrorMessage(errorEmail, message);
+});
 /**
  * 에러 메세지가 있을 경우 에러 영역에 메세지 추가하고 hidden 속성 제거
  * 에러 메세지가 없을 경우 hidden 속성 추가하여 에러메세지 가림
@@ -88,5 +98,37 @@ function validatePasswordCheck(password, passwordCheck){
         return '';
     }else{
         return '위 비밀번호와 일치하지 않습니다. 다시 입력해 주세요.';
+    }
+}
+
+/**
+ * @param {string} emailId
+ * @returns {strig} 유효한 이메일 아이디면 빈 문자열, 아닌 경우 에러 문자열 반환
+ */
+function validateEmailId(emailId){
+    if(emailId.length === 0){
+        return '이메일 주소를 입력해 주세요.';
+    }
+    const regExp = /^[a-zA-Z0-9_-]+$/;
+    if(regExp.test(emailId)){
+        return '';
+    }else{
+        return '이메일 주소를 확인해 주세요.';
+    }
+}
+
+/**
+ * @param {string} emailSite
+ * @returns {strig} 유효한 이메일 사이트면 빈 문자열, 아닌 경우 에러 문자열 반환
+ */
+function validateEmailSite(emailSite){
+    if(emailSite.length === 0){
+        return '이메일 주소를 입력해 주세요.';
+    }
+    const regExp = /[a-zA-Z0-9_-]+.[a-zA-Z0-9_-]+/;
+    if(regExp.test(emailSite)){
+        return '';
+    }else{
+        return '이메일 주소를 확인해 주세요.';
     }
 }
