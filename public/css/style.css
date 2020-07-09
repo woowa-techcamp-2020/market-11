@@ -18,6 +18,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 70px;
 }
 
 #essential-info > h1 {
@@ -28,8 +29,8 @@ form {
   font-weight: normal;
 }
 
-#terms {
-  height: 230px;
+#terms > * {
+  margin-bottom: 0;
 }
 
 .logo {
@@ -259,6 +260,7 @@ input[type='checkbox']:checked + label::after {
 }
 
 .has-button {
+  position: relative;
   justify-content: space-between;
 }
 
@@ -286,6 +288,15 @@ input[type='checkbox']:checked + label::after {
   border-color: #bbc0cd;
   color: #bbc0cd;
   background-color: #fff;
+}
+
+.button.completed {
+  border-color: #f8f9fa;
+  color: #bbc0cd;
+}
+
+.completed {
+  color: #8e929f;
 }
 
 .button.primary {
@@ -316,6 +327,20 @@ input[type='checkbox']:checked + label::after {
   overflow: hidden;
   z-index: 1;
   -webkit-overflow-scrolling: touch;
+}
+
+#layer.notice {
+  overflow-y: auto;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  background: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
+  z-index: 1300;
+  opacity: 1;
+  word-break: break-all;
 }
 
 #close-layer-btn {
@@ -358,4 +383,62 @@ input[type='checkbox']:checked + label::after {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
   letter-spacing: -0.2px;
   line-height: 13px;
+=======
+.notice-content {
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 27px 25px 25px;
+}
+
+.notice-content > strong {
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 9px;
+}
+
+.notice-btn {
+  padding: 14px 0 13px;
+  width: 300px;
+  font-size: 16px;
+  color: #212329;
+  background-color: #fff;
+  line-height: 22px;
+  border: 0;
+  border-top: 1px solid #979797;
+  box-sizing: border-box;
+}
+
+#auth-container {
+  display: none;
+}
+
+.timer {
+  position: absolute;
+  right: 115px;
+  color: #f52926;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+  color: #f52926;
+  font-weight: normal;
+}
+
+.valid-id {
+  color: #8e929f;
+}
+
+.error-input {
+  border-color: #f52926;
 }
