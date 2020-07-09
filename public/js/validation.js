@@ -52,7 +52,7 @@ function validateId(id){
     if(id.length === 0){
         return '아이디를 입력해주세요.';
     }
-    const regExp = /^[a-zA-Z0-9_-]{4,20}$/g;
+    const regExp = /^[a-zA-Z0-9_-]{4,20}$/;
     if(regExp.test(id)){
         return '';
     }else{
