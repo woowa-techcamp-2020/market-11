@@ -37,3 +37,21 @@ function getEncryptedPasswordAndSalt(password){
     });
   });
 }
+
+/**
+ * 아이디 중복을 확인
+ * @param {Nedb} db
+ * @param {string} id
+ * @returns {Promise<boolean>} 중복된 아이디면 true, 아니면 false 반환 
+ */
+function isIdDuplicated(db, id){
+  return new Promise((resolve, reject)=>{
+    db.find({"id":id}, function(err, docs){
+      if(docs.length > 0){
+        resolve(true);
+      }else{
+        resolve(false);
+      }
+    });
+  });
+}
