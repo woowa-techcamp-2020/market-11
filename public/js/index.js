@@ -45,15 +45,38 @@ optionInfoCheck.addEventListener('click', toggleAddress);
 
 const findAddressBtn = document.getElementById('find-address');
 
-let modal = document.getElementById('modal');
-let elementLayer = document.getElementById('layer');
-let closeBtn = document.getElementById('close-layer-btn');
+const createModal = () => {
+  let modal = document.createElement('div');
+  modal.setAttribute('id', 'modal');
+  document.body.appendChild(modal);
+  modal.addEventListener('click', removeModal);
 
-function closeModal(e) {
-  modal.style.display = 'none';
+  return modal;
+};
+
+const insertLayer = (el) => {
+  let elementLayer = document.createElement('div');
+  elementLayer.setAttribute('id', 'layer');
+  el.appendChild(elementLayer);
+
+  return elementLayer;
+};
+
+const insertCloseBtn = (el) => {
+  let closeBtn = document.createElement('img');
+  closeBtn.setAttribute('id', 'close-layer-btn');
+  closeBtn.setAttribute('src', '//t1.daumcdn.net/postcode/resource/images/close.png');
+  closeBtn.setAttribute('alt', '닫기 버튼');
+  closeBtn.addEventListener('click', removeModal);
+
+  return closeBtn;
+};
+
+function removeModal(e) {
+  document.getElementById('modal').remove();
 }
 
-function execDaumPostcode() {
+function execDaumPostcode(modal, layer) {
   new daum.Postcode({
     oncomplete: function (data) {
       let addr = '';
@@ -69,30 +92,30 @@ function execDaumPostcode() {
       document.getElementById('address').value = addr;
       document.getElementById('address-detail').focus();
 
-      modal.style.display = 'none';
+      modal.remove();
     },
     width: '100%',
     height: '100%',
     maxSuggestItems: 5,
-  }).embed(elementLayer);
+  }).embed(layer);
 
-  elementLayer.style.display = 'block';
+  layer.style.display = 'block';
 
-  initLayerPosition();
+  initLayerPosition(layer);
 }
 
-function initLayerPosition() {
+function initLayerPosition(layer) {
   let width = 300;
   let height = 400;
   let borderWidth = 5;
 
-  elementLayer.style.width = width + 'px';
-  elementLayer.style.height = height + 'px';
-  elementLayer.style.border = borderWidth + 'px solid';
+  layer.style.width = width + 'px';
+  layer.style.height = height + 'px';
+  layer.style.border = borderWidth + 'px solid';
 
-  elementLayer.style.left =
+  layer.style.left =
     ((window.innerWidth || document.documentElement.clientWidth) - width) / 2 - borderWidth + 'px';
-  elementLayer.style.top =
+  layer.style.top =
     ((window.innerHeight || document.documentElement.clientHeight) - height) / 2 -
     borderWidth +
     'px';
@@ -100,11 +123,12 @@ function initLayerPosition() {
 
 const openModal = (e) => {
   if (e.target.className.includes('enable')) {
+    let modal = createModal();
+    let layer = insertLayer(modal);
+    insertCloseBtn(layer);
     modal.style.display = 'block';
-    execDaumPostcode();
+    execDaumPostcode(modal, layer);
   }
 };
 
 optionInfo.addEventListener('click', openModal);
-closeBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', closeModal);
