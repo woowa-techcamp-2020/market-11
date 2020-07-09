@@ -1,8 +1,9 @@
 module.exports = {
   createUser: async function (req, res, db) {
+    const encryptedPasswordAndSalt = await getEncryptedPasswordAndSalt(req.body['password']);
     const user = {
       id: req.body['id'],
-      password: req.body['password'],
+      password: encryptedPasswordAndSalt.encryptedPassword,
       emailId: req.body['emailId'],
       emailSite: req.body['emailSite'],
       name: req.body['name'],
@@ -11,6 +12,7 @@ module.exports = {
       address: req.body['address'],
       addressDetail: req.body['addressDetail'],
       isOptionalTermChecked: req.body['optionalTermChecked'],
+      salt: encryptedPasswordAndSalt.salt,
     };
     db.insert(user, function (err) {
       const result = { success: 1 };
