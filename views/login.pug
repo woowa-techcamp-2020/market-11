@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title &#xBC30;&#xB2EC;&#xC758;&#xBBFC;&#xC871; &#xC0AC;&#xC7A5;&#xB2D8; &#xD1B5;&#xD569; &#xB85C;&#xADF8;&#xC778;
+  link(rel='stylesheet' type='text/css' href='css/reset.css')
+  link(rel='stylesheet' type='text/css' href='css/style.css')
+.login-container
+  .logo
+    img(src='https://ceo.baemin.com/cdn/ceo-moon/static/desktop/main/logo-ceo.svg?ver=37ff4fc80c3dfb2e2c76b41825e4c4da' alt='사장님 사이트')
+  form.form-login
+    input#id.row(name='id' placeholder='아이디')
+    input#password.row(name='password' placeholder='비밀번호')
+    #save-find-signup.row.has-checkbox
+      input#id-save(type='checkbox' name='id-save')
+      label(for='id-save') 아이디 저장
+      span.signup
+        a(href='#') 회원가입
+      span.find-id-password
+        a(href='#') 아이디
+        span /
+        a(href='#') 비밀번호 찾기
+    button.row.button.solid.primary(type='submit') 로그인

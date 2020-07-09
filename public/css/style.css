@@ -351,6 +351,39 @@ input[type='checkbox']:checked + label::after {
   z-index: 1;
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 325px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.form-login {
+  position: relative;
+}
+
+#save-find-signup {
+  margin-top: 10px;
+}
+
+.form-login .find-id-password,
+.form-login .signup {
+  margin-left: 20px;
+  float: right;
+}
+
+.form-login .find-id-password,
+.form-login .signup,
+.form-login a {
+  text-decoration: none;
+  color: #898989;
+  font-size: 13px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  letter-spacing: -0.2px;
+  line-height: 13px;
+=======
 .notice-content {
   font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
   font-size: 14px;
