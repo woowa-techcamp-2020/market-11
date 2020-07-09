@@ -133,6 +133,7 @@ dl.sign-up-info > dd {
 }
 
 a.small-link {
+  color: #898989;
   font-size: 12px;
   letter-spacing: -0.1px;
   padding-left: 9px;
@@ -250,8 +251,7 @@ button {
 
 input[type='checkbox'] {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  display: none;
   border: 0;
   background-color: transparent;
   z-index: -1;
@@ -266,6 +266,7 @@ input[type='checkbox']:checked + label::after {
 }
 
 .has-button > input {
+  max-width: 220px;
   flex-basis: 220px;
 }
 
