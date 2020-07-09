@@ -266,6 +266,7 @@ function handleFormSubmit() {
   });
   const errorInputs = document.getElementsByClassName('error-input');
   if (errorInputs.length > 0) {
+    errorInputs[0].focus();
     return false;
   } else {
     return true;
