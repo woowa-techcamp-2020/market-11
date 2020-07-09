@@ -155,6 +155,7 @@ const isValidPhoneNumber = (e) => {
 const authPhone = () => {
   sendNumber();
   popUpNotice();
+  changeButton();
 };
 
 const sendNumber = () => {
@@ -191,6 +192,10 @@ const insertNotice = (layer) => {
   noticeBtn.setAttribute('class', 'notice-btn');
   noticeBtn.innerText = '확인';
   layer.appendChild(noticeBtn);
+};
+
+const changeButton = () => {
+  verifyBtn.textContent = '재전송';
 };
 
 phoneInput.addEventListener('input', isValidPhoneNumber);
