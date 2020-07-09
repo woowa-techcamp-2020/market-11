@@ -331,3 +331,14 @@ input[type='checkbox']:checked + label::after {
   display: none;
 }
 
+.error-message{
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+  color: #f52926;
+  font-weight: normal;
+}
+
+.error-input{
+  border-color: #f52926;
+}
