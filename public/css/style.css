@@ -181,10 +181,15 @@ input {
   box-sizing: border-box;
   padding: 12px 14px;
   border: 1px solid #d7dbe6;
+  background-color: #fff;
 }
 
 input::placeholder {
   color: #cacdd6;
+}
+
+input.disable::placeholder {
+  color: #8e929f;
 }
 
 select {
@@ -279,7 +284,7 @@ input[type='checkbox']:checked + label::after {
   background-color: #1a7cff;
 }
 
-.button.ghost {
+.button.enable {
   border-color: #1a7cff;
   color: #1a7cff;
   background-color: #fff;
@@ -299,4 +304,32 @@ input[type='checkbox']:checked + label::after {
   width: 25px;
   text-align: center;
   font-family: 'NotoSansKR';
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#layer {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+#close-layer-btn {
+  cursor: pointer;
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  z-index: 1;
 }
