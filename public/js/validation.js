@@ -136,7 +136,7 @@ function validateEmailSite(emailSite){
     if(emailSite.length === 0){
         return '이메일 주소를 입력해 주세요.';
     }
-    const regExp = /[a-zA-Z0-9_-]+.[a-zA-Z0-9_-]+/;
+    const regExp = /[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+/;
     if(regExp.test(emailSite)){
         return '';
     }else{
