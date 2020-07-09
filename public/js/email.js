@@ -1,17 +1,32 @@
 const emailSelect = document.getElementById('email-site-select');
 const emailSite = document.getElementById('email-site');
 
-const inputEmail = (e) => {
+const updateEmailSite = (e) => {
   if (e.target.value === 'etc') {
-    emailSite.removeAttribute('disabled');
-    emailSite.setAttribute('placeholder', '이메일 뒷자리*');
+    enableEmailSite();
   } else if (e.target.value === 'noSelected') {
-    emailSite.setAttribute('disabled', '');
+    keepEmailSite();
   } else {
-    emailSite.value = '';
-    emailSite.setAttribute('disabled', '');
-    emailSite.setAttribute('placeholder', e.target.value);
+    setEmailSite(e.target.value);
   }
 };
 
-emailSelect.addEventListener('change', inputEmail);
+const enableEmailSite = () => {
+  emailSite.value = '';
+  emailSite.classList.remove('disable');
+  emailSite.removeAttribute('disabled');
+  emailSite.setAttribute('placeholder', '이메일 뒷자리*');
+};
+
+const keepEmailSite = () => {
+  emailSite.setAttribute('disabled', '');
+};
+
+const setEmailSite = (site) => {
+  emailSite.value = site;
+  emailSite.classList.add('disable');
+  emailSite.setAttribute('disabled', '');
+  emailSite.setAttribute('placeholder', emailSite);
+};
+
+emailSelect.addEventListener('change', updateEmailSite);
