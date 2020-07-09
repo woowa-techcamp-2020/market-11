@@ -17,37 +17,44 @@ inputId.addEventListener('blur', function(event){
     const id = event.target.value;
     const message = validateId(id);
     handleErrorMessage(errorId, message);
+    handleBorderColor(inputId, message);
 });
 inputPassword.addEventListener('blur', function(event){
     const password = event.target.value;
     const message = validatePassword(password);
     handleErrorMessage(errorPassword, message);
+    handleBorderColor(inputPassword, message);
 });
 inputPasswordCheck.addEventListener('blur', function(event){
     const password = inputPassword.value;
     const passwordCheck = event.target.value;
     const message = validatePasswordCheck(password, passwordCheck);
     handleErrorMessage(errorPasswordCheck, message);
+    handleBorderColor(inputPasswordCheck, message);
 });
 inputEmailId.addEventListener('blur', function(event){
     const emailId = event.target.value;
     const message = validateEmailId(emailId);
     handleErrorMessage(errorEmail, message);
+    handleBorderColor(inputEmailId, message);
 });
 inputEmailSite.addEventListener('blur', function(event){
     const emailSite = event.target.value;
     const message = validateEmailSite(emailSite);
     handleErrorMessage(errorEmail, message);
+    handleBorderColor(inputEmailSite, message);
 });
 inputName.addEventListener('blur', function(event){
     const name = event.target.value;
     const message = validateName(name);
     handleErrorMessage(errorName, message);
+    handleBorderColor(inputName, message);
 });
 inputPhone.addEventListener('blur', function(event){
     const phone = event.target.value;
     const message = validatePhone(phone);
     handleErrorMessage(errorPhone, message);
+    handleBorderColor(inputPhone, message);
 });
 
 /**
@@ -62,6 +69,19 @@ function handleErrorMessage(errorLabel, message){
         errorLabel.className = errorLabel.className.replace(/\bhidden\b/g, ''); // Cross-Browser 고려한 remove class name
     }else{
         errorLabel.classList.add('hidden');
+    }
+}
+
+/**
+ * 에러 메세지가 있을 경우 인풋 테두리를 빨간색으로 설정
+ * @param {DOM} inputDom 
+ * @param {string} message 
+ */
+function handleBorderColor(inputDom, message){
+    if(message !== ''){
+        inputDom.classList.add('error-input');
+    }else{
+        inputDom.className = inputDom.className.replace(/\berror-input\b/g, ''); // Cross-Browser 고려한 remove class name
     }
 }
 
