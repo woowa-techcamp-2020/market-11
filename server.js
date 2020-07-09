@@ -11,7 +11,7 @@ const db = new Database({ filename: 'user.db', autoload: true });
 
 app.set('views', __dirname + '/views'); // 서버가 읽을 수 있도록 html의 위치를 정의해줌.
 app.set('view engine', 'pug'); // ejs는 템플릿 엔진, pug도 템플릿 엔진, 서버가 html을 렌더링 할때 ejs엔진을 사용하도록 설정
-app.engine('html', require('pug').renderFile);
+app.engine('pug', require('pug').__express);
 
 const server = app.listen(3000, function () {
   console.log('Express server has started on port 3000');
