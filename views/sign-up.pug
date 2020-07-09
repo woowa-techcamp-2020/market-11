@@ -39,10 +39,10 @@ head
         label(for='option-info-check') 선택 정보를 입력하시겠어요?
         a.small-link(href='https://ceo.baemin.com/#/policy/history?position=collectionAndUsageNormal' target='_blank') 내용보기
       .row.container.has-button
-        input#zipcode(name='zipcode' placeholder='우편번호')
+        input#zipcode.disable(name='zipcode' placeholder='우편번호')
         button.button.disable 주소찾기
-      input#address.row(name='address' placeholder='주소')
-      input#address-detail.row(name='address-detail' placeholder='상세 주소')
+      input#address.row.disable(name='address' placeholder='주소')
+      input#address-detail.row.disable(name='address-detail' placeholder='상세 주소')
     section#terms.form-section(name='terms')
       h1.row.container.has-checkbox
         input#all-terms(type='checkbox' name='all-terms')
@@ -63,3 +63,4 @@ head
         li 만 14세 이상 회원만 가입 가능합니다.
           a.small-link(href='#') 내용보기
     button.row.button.solid.primary(type='submit') 가입완료
+script(type='text/javascript' src='js/index.js')
