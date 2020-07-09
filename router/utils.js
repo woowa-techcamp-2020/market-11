@@ -1,5 +1,4 @@
-exports.modules = {
-  createUser: function (req, res) {
+module.exports = {
     const user = {
       id: req.body['id'],
       password: req.body['password'],
