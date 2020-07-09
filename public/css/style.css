@@ -12,17 +12,13 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 1150px;
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-#essential-info {
-  height: 500px;
+  margin-bottom: 70px;
 }
 
 #essential-info > h1 {
@@ -33,12 +29,8 @@ form {
   font-weight: normal;
 }
 
-#option-info {
-  height: 230px;
-}
-
-#terms {
-  height: 230px;
+#terms > * {
+  margin-bottom: 0;
 }
 
 .logo {
@@ -241,6 +233,7 @@ label > strong {
 .row {
   width: 325px;
   height: 50px;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -395,4 +388,24 @@ input[type='checkbox']:checked + label::after {
   color: #f52926;
   font-size: 14px;
   line-height: 22px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+  color: #f52926;
+  font-weight: normal;
+}
+
+.valid-id {
+  color: #8e929f;
+}
+
+.error-input {
+  border-color: #f52926;
 }
