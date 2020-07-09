@@ -1,8 +1,15 @@
 module.exports = {
   createUser: async function (req, res, db) {
+    const userId = req.body['id'];
+    const idDuplication = await isIdDuplicated(db, userId);
+    if(idDuplication){
+      res.json({success: 0});
+      console.log('아이디 중복');
+      return;
+    }
     const encryptedPasswordAndSalt = await getEncryptedPasswordAndSalt(req.body['password']);
     const user = {
-      id: req.body['id'],
+      id: userId,
       password: encryptedPasswordAndSalt.encryptedPassword,
       emailId: req.body['emailId'],
       emailSite: req.body['emailSite'],
