@@ -10,18 +10,23 @@ const resetTimeout = () => {
   timeout = 120;
 };
 
-let timeCount = () => {
-  setInterval(() => {
+let timeCount = (prevTimer) => {
+  let timeCountDown = setInterval(() => {
+    if (prevTimer) {
+      clearInterval(timeCountDown);
+    }
     timeout--;
     const min = parseInt(timeout / 60);
     const sec = timeout % 60;
     let timeString = `0${min}:${sec > 10 ? sec : `0${sec}`}`;
     displayTime(timeString);
     if (timeout === 0) {
+      clearInterval(timeCountDown);
       timeover();
     }
   }, 1000);
 };
+
 const isValidPhoneNumber = (e) => {
   let input = e.target.value;
   phoneInput.value = input.replace(/([^0-9])/g, '');
@@ -54,9 +59,10 @@ const authPhone = () => {
   popUpNotice();
   changeButton();
   insertAuthContainer(verifyNum);
+  const prevTimer = document.querySelector('.timer');
   createTimer();
   resetTimeout();
-  timeCount();
+  timeCount(prevTimer);
 };
 
 const zeroPad = (num, places) => String(num).padStart(places, '0');
