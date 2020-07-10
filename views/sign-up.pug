@@ -1,0 +1,83 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title 배민 사장님 광장
+  link(rel='shortcut icon' href='assets/favicon.ico' type='image/x-icon')
+  link(rel='icon' href='assets/favicon.ico' type='image/x-icon')
+  link(rel='stylesheet' type='text/css' href='css/reset.css')
+  link(rel='stylesheet' type='text/css' href='css/style.css')
+.signup-container
+  .logo
+    img(src='https://ceo.baemin.com/cdn/ceo-moon/static/desktop/main/logo-ceo.svg?ver=37ff4fc80c3dfb2e2c76b41825e4c4da' alt='사장님 사이트')
+  form(action='./add-user' method='POST' onsubmit="return handleFormSubmit()")
+    section#essential-info.form-section(name='essential-info')
+      h1 필수 정보를 입력해 주세요.
+      input#id.row(name='id' placeholder='아이디* (4~20자)')
+      p#error-id(class='error-message hidden')
+      input#password.row(type='password' name='password' placeholder='비밀번호* (영문+숫자, 8~20자)')
+      p#error-password(class='error-message hidden')
+      input#password-check.row(type='password' name='password-check' placeholder='비밀번호 재확인*')
+      p#error-password-check(class='error-message hidden')
+      .row.container.email
+        input#email-id(name='email-id' placeholder='이메일 앞자리*')
+        span @
+        input#email-site(name='email-site' placeholder='이메일 뒷자리*' disabled)
+      p#error-email(class='error-message hidden')
+      select#email-site-select.row(name='email-site-select')
+        option(value='noSelected') 이메일 선택
+        option(value='naver.com') naver.com
+        option(value='hanmail.net') hanmail.net
+        option(value='nate.com') nate.com
+        option(value='hotmail.com') hotmail.com
+        option(value='gmail.com') gmail.com
+        option(value='etc') 직접 입력
+      input#name.row(name='name' placeholder='이름*')
+      p#error-name(class='error-message hidden')
+      .row.container.has-button
+        input#phone(name='phone' placeholder='휴대폰*')
+        button.verify-btn.button.disable(type='button' disabled) 인증받기
+      #auth-container.row.container.has-button
+        input#auth(name='phone-auth' placeholder='인증번호 6자리 입력')
+        button.button.enable(type='button') 확인
+      p#error-phone(class='error-message hidden')
+      ul.row
+        li 인증번호 전송은 통신사에 따라 최대 1분까지 소요될 수 있습니다.
+        li 인증번호가 도착하지 않을 경우 '인증번호 재전송'을 눌러주세요.
+    section#option-info.form-section(name='option-info')
+      h1.row.container.has-checkbox
+        input#option-info-check(type='checkbox' name='option-info-check')
+        label(for='option-info-check') 선택 정보를 입력하시겠어요?
+        a.small-link(href='https://ceo.baemin.com/#/policy/history?position=collectionAndUsageNormal' target='_blank') 내용보기
+      .row.container.has-button
+        input#zipcode.disable(name='zipcode' placeholder='우편번호' disabled)
+        button#find-address.button.disable(type='button' disabled) 주소찾기
+      input#address.row.disable(name='address' placeholder='주소' disabled)
+      input#address-detail.row.disable(name='address-detail' placeholder='상세 주소' disabled)
+    section#terms.form-section(name='terms')
+      h1.row.container.has-checkbox
+        input#all-terms(type='checkbox' name='all-terms')
+        label(for='all-terms')
+          strong 전체 약관에 동의합니다.
+      .row.container.has-checkbox
+        input#essential-terms(type='checkbox' name='essential-terms')
+        label(for='essential-terms') 필수 항목에 동의합니다.
+      .row.terms-links
+        a(href='https://ceo.baemin.com/#/policy/history?position=terms' target='_blank') 배민사장님광장 이용약관
+        a(href='https://ceo.baemin.com/#/policy/history?position=collectionAndUsageNormal' target='_blank') 개인정보 수집이용 동의
+      .row.container.has-checkbox
+        input#option-terms(type='checkbox' name='option-terms')
+        label(for='option-terms') 광고성 정보 수신 동의 (선택)
+      .row
+        p.terms-desc 배민사장님광장 회원에게 제공되는 서비스의 광고성 정보를 수신합니다.
+      ul
+        li 만 14세 이상 회원만 가입 가능합니다.
+          a.small-link(href='#') 내용보기
+    button.row.button.solid.primary(type='submit') 가입완료
+script(type='text/javascript' src='https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js')
+script(type='text/javascript' src='js/email.js')
+script(type='text/javascript' src='js/option-info.js')
+script(type='text/javascript' src='js/terms.js')
+script(type='text/javascript' src='js/find-address.js')
+script(type='text/javascript' src='js/phone-auth.js')
+script(type='text/javascript' src='js/validation.js')

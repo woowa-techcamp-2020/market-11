@@ -1,0 +1,480 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 325px;
+  padding: 80px 0 60px 0;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+#essential-info > h1 {
+  margin-bottom: 15px;
+  line-height: 25px;
+  letter-spacing: -0.4px;
+  color: #212329;
+  font-weight: normal;
+}
+
+#terms > * {
+  margin-bottom: 0;
+}
+
+.logo {
+  width: 325px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.logo > img {
+  width: 220px;
+  margin: 0 auto;
+}
+
+.complete-wrap {
+  width: 328px;
+  margin-left: 32px;
+}
+
+.complete {
+  padding: 90px 0 0;
+}
+
+.complete > h1 {
+  font-size: 40px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-family: Noto Sans KR;
+}
+
+.logo-complete > img {
+  width: 297px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+.complete-desc > li > a {
+  color: #898989;
+}
+
+h1 {
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+}
+
+li {
+  color: #898989;
+  font-size: 12px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  letter-spacing: -0.2px;
+  line-height: 12px;
+  position: relative;
+  margin: 10px 0 0 9px;
+}
+
+li::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: -8px;
+  width: 3px;
+  height: 3px;
+  background: #bbc0cd;
+  border-radius: 50%;
+}
+
+dl.sign-up-info {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #d7dbe6;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+dl.sign-up-info > dt {
+  color: #898989;
+  width: 60px;
+  margin: 10px 5px;
+  display: block;
+}
+
+dl.sign-up-info > dd {
+  width: 226px;
+  margin: 10px 0;
+}
+
+.terms-links > a {
+  color: #898989;
+  font-size: 14px;
+  letter-spacing: -0.4px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+}
+
+a.small-link {
+  color: #898989;
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  padding-left: 9px;
+}
+
+a.to-main-arrow {
+  margin: 45px 0 25px;
+  text-decoration: none;
+  line-height: 30px;
+  color: #1a7cff;
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+a.to-main-arrow::after {
+  content: '';
+  display: inline-block;
+  margin-left: 13px;
+  width: 16px;
+  height: 16px;
+  background: url(../assets/arr-blue.png);
+  background-size: 16px 16px;
+}
+
+div.terms-links {
+  box-sizing: border-box;
+  padding: 2px 0 0 43px;
+  height: 30px;
+}
+
+p.terms-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #898989;
+  padding: 2px 0 0 43px;
+  width: auto;
+  letter-spacing: -0.6px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+}
+
+input {
+  font-size: 16px;
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d7dbe6;
+  background-color: #fff;
+}
+
+input::placeholder {
+  color: #cacdd6;
+}
+
+input.disable {
+  color: #8e929f;
+}
+
+input.disable::placeholder {
+  color: #8e929f;
+}
+
+select {
+  display: block;
+  font-size: 17px;
+  padding: 5px 14px;
+  border: 1px solid #d7dbe6;
+  -webkit-appearance: none;
+  background-image: url(https://ceo.baemin.com/cdn/ceo-moon/static/desktop/down-arrow@2x.png);
+  background-position-x: 95%;
+  background-position-y: 50%;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+button {
+  font-size: 16px;
+  font-weight: 700;
+  font-stretch: 100%;
+  box-sizing: border-box;
+  border: 1px solid;
+}
+
+label {
+  position: relative;
+  font-size: 14px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  padding-left: 35px;
+}
+
+label::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -4px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: url(https://ceo.baemin.com/cdn/ceo-moon/static/mobile/main/sp-inputs.png);
+  background-position: -60px 0;
+  background-size: 120px 25px;
+}
+
+label > strong {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.row {
+  width: 325px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container > input,
+button {
+  width: 150px;
+  height: 100%;
+}
+
+input[type='checkbox'] {
+  position: absolute;
+  display: none;
+  border: 0;
+  background-color: transparent;
+  z-index: -1;
+}
+
+input[type='checkbox']:checked + label::after {
+  background-position: -90px 0;
+}
+
+.has-button {
+  position: relative;
+  justify-content: space-between;
+}
+
+.has-button > input {
+  max-width: 220px;
+  flex-basis: 220px;
+}
+
+.has-button > button {
+  flex-basis: 98px;
+}
+
+.button.solid {
+  color: #fff;
+  background-color: #1a7cff;
+}
+
+.button.enable {
+  border-color: #1a7cff;
+  color: #1a7cff;
+  background-color: #fff;
+}
+
+.button.disable {
+  border-color: #bbc0cd;
+  color: #bbc0cd;
+  background-color: #fff;
+}
+
+.button.completed {
+  border-color: #f8f9fa;
+  color: #bbc0cd;
+}
+
+.completed {
+  color: #8e929f;
+}
+
+.button.primary {
+  font-size: 18px;
+}
+
+.email > span {
+  width: 25px;
+  text-align: center;
+  font-family: 'NotoSansKR';
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#layer {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+#layer.notice {
+  overflow-y: auto;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  background: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
+  z-index: 1300;
+  opacity: 1;
+  word-break: break-all;
+}
+
+#close-layer-btn {
+  cursor: pointer;
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  z-index: 1;
+}
+
+.login-container,
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 325px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.form-login {
+  position: relative;
+}
+
+#save-find-signup {
+  margin-top: 10px;
+}
+
+.form-login .find-id-password,
+.form-login .signup {
+  margin-left: 20px;
+  float: right;
+}
+
+.form-login .find-id-password,
+.form-login .signup,
+.form-login a {
+  text-decoration: none;
+  color: #898989;
+  font-size: 13px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  letter-spacing: -0.2px;
+  line-height: 13px;
+}
+
+.notice-content {
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 27px 25px 25px;
+}
+
+.notice-content > strong {
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 9px;
+}
+
+.notice-btn {
+  padding: 14px 0 13px;
+  width: 300px;
+  font-size: 16px;
+  color: #212329;
+  background-color: #fff;
+  line-height: 22px;
+  border: 0;
+  border-top: 1px solid #979797;
+  box-sizing: border-box;
+}
+
+#auth-container {
+  display: none;
+}
+
+.timer {
+  position: absolute;
+  right: 115px;
+  color: #f52926;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+  color: #f52926;
+  font-weight: normal;
+}
+
+.valid-id {
+  color: #8e929f;
+}
+
+.error-input {
+  border-color: #f52926;
+}
+
+.invisible {
+  display: block;
+  visibility: hidden;
+}
+
+#error-id-password {
+  height: 22px;
+}
+
+.main-container #notice {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.main-container .signup,
+.main-container .find-id-password {
+  margin-left: 20px;
+  float: right;
+}
+
+.main-container a,
+.main-container span {
+  text-decoration: none;
+  color: #898989;
+  font-size: 13px;
+  font-family: Roboto, Noto Sans KR, sans-serif, '돋움', Dotum, helvetica;
+  letter-spacing: -0.2px;
+  line-height: 13px;
+}
