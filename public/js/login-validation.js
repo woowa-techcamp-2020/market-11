@@ -26,7 +26,7 @@ function handleFormSubmit() {
   } else {
     document.cookie = 'user_id=' + inputId.value + '; max-age=0';
   }
-  return false;
+  return true;
 }
 
 /**

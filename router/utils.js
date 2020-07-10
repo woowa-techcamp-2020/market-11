@@ -41,13 +41,11 @@ module.exports = {
     const encryptedPassword = await getEncryptedPasswordWithSalt(userPassword, userSalt);
     const logInSuccess = await processLogIn(db, userId, encryptedPassword);
     if (logInSuccess) {
-      const result = { success: 1 };
       sess.userId = userId;
-      res.json(result);
+      res.redirect('/');
       console.log('로그인 성공');
     } else {
-      const result = { success: -1 };
-      res.json(result);
+      res.render('login.pug');
       console.log('패스워드 불일치');
     }
   },
