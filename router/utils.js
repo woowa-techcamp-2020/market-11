@@ -11,14 +11,14 @@ module.exports = {
     const user = {
       id: userId,
       password: encryptedPasswordAndSalt.encryptedPassword,
-      emailId: req.body['emailId'],
-      emailSite: req.body['emailSite'],
+      emailId: req.body['email-id'],
+      emailSite: req.body['email-site'],
       name: req.body['name'],
       phone: req.body['phone'],
-      zipCode: req.body['zipCode'],
+      zipCode: req.body['zipcode'],
       address: req.body['address'],
-      addressDetail: req.body['addressDetail'],
-      isOptionalTermChecked: req.body['optionalTermChecked'],
+      addressDetail: req.body['address-detail'],
+      isOptionalTermChecked: req.body['option-terms'],
       salt: encryptedPasswordAndSalt.salt,
     };
     db.insert(user, function (err) {
