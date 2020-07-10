@@ -1,3 +1,4 @@
+const optionInfo = document.getElementById('option-info');
 const optionInfoCheck = document.getElementById('option-info-check');
 
 const toggleAddress = (e) => {
@@ -12,6 +13,7 @@ const toggleAddress = (e) => {
     });
   } else {
     Array.from(optionElements).forEach((el) => {
+      el.value = '';
       el.classList.remove('enable');
       el.classList.add('disable');
       el.setAttribute('disabled', '');
