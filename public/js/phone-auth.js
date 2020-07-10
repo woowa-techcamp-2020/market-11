@@ -107,6 +107,10 @@ const resetButton = () => {
   verifyBtn.textContent = '인증받기';
 };
 
+const completeButton = () => {
+  verifyBtn.textContent = '인증완료';
+};
+
 const insertAuthContainer = (number) => {
   authContainer.style.display = 'flex';
   authContainer.value = number;
@@ -124,6 +128,7 @@ const authNumberCheck = () => {
     verifyBtn.setAttribute('disabled', '');
     verifyBtn.classList.remove('enable');
     verifyBtn.classList.add('completed');
+    completeButton();
   } else {
     alert('인증 실패');
   }
