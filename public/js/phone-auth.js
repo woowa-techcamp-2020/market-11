@@ -10,17 +10,18 @@ const resetTimeout = () => {
   timeout = 120;
 };
 
-let timeCount = setInterval(() => {
-  timeout--;
-  const min = parseInt(timeout / 60);
-  const sec = timeout % 60;
-  let timeString = `0${min}:${sec > 10 ? sec : `0${sec}`}`;
-  displayTime(timeString);
-  if (timeout === 0) {
-    timeover();
-  }
-}, 1000);
-
+let timeCount = () => {
+  setInterval(() => {
+    timeout--;
+    const min = parseInt(timeout / 60);
+    const sec = timeout % 60;
+    let timeString = `0${min}:${sec > 10 ? sec : `0${sec}`}`;
+    displayTime(timeString);
+    if (timeout === 0) {
+      timeover();
+    }
+  }, 1000);
+};
 const isValidPhoneNumber = (e) => {
   let input = e.target.value;
   phoneInput.value = input.replace(/([^0-9])/g, '');
@@ -131,7 +132,6 @@ const authNumberCheck = () => {
 const createTimer = () => {
   const prevTimer = document.querySelector('.timer');
   if (prevTimer) {
-    console.log('in');
     prevTimer.remove();
   }
 
