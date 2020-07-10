@@ -84,10 +84,11 @@ const authNumberCheck = () => {
   if (authContainer.value === authInput.value) {
     authContainer.style.display = 'none';
 
-    phoneInput.setAttribute('disabled', '');
+    phoneInput.setAttribute('readonly', '');
     phoneInput.classList.remove('enable');
     phoneInput.classList.add('completed');
 
+    authInput.setAttribute('disabled', '');
     verifyBtn.setAttribute('disabled', '');
     verifyBtn.classList.remove('enable');
     verifyBtn.classList.add('completed');
