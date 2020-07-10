@@ -28,6 +28,7 @@ module.exports = {
     });
   },
   validateUser: async function (req, res, db) {
+    const sess = req.session;
     const userId = req.body['id'];
     const userPassword = req.body['password'];
     const idExistence = await hasId(db, userId);
@@ -41,6 +42,7 @@ module.exports = {
     const logInSuccess = await processLogIn(db, userId, encryptedPassword);
     if (logInSuccess) {
       const result = { success: 1 };
+      sess.userId = userId;
       res.json(result);
       console.log('로그인 성공');
     } else {
