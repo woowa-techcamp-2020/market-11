@@ -180,6 +180,10 @@ input::placeholder {
   color: #cacdd6;
 }
 
+input.disable {
+  color: #8e929f;
+}
+
 input.disable::placeholder {
   color: #8e929f;
 }
