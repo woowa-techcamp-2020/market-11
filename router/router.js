@@ -1,12 +1,25 @@
 const utils = require('./utils');
 
 module.exports = function (app, db) {
+  app.get('/', function (req, res) {
+    res.render('main.pug');
+  });
+
   app.get('/sign-up', function (req, res) {
     res.render('sign-up.pug');
   });
 
   app.get('/login', function (req, res) {
-    res.render('login.pug');
+    const sess = req.session;
+    if (sess.userId) {
+      res.redirect('/');
+    } else {
+      res.render('login.pug');
+    }
+  });
+
+  app.post('/login', function (req, res) {
+    utils.validateUser(req, res, db);
   });
 
   app.get('/sign-up-complete', function (req, res) {

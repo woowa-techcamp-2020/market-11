@@ -22,5 +22,13 @@ app.use(express.static('public')); // 정적파일의 루트 지정 : html에서
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(
+  session({
+    secret: '@#@$MYSIGN#@$#$', // 쿠키를 임의로 변조하는 것을 방지하기 위한 sign 값, 원하는 값을 넣으면 됨
+    resave: false, // 세션을 언제나 저장할 지 (변경되지 않아도) 설정, false를 권장, 필요시 true
+    saveUninitialized: true, // uninitialized 세션 : 새로 생겼지만 변경되지 않은 세션, true 권장
+  }),
+);
+
 const router = require('./router/router')(app, db); // main.js 에서 export한 함수에 app을 파라미터로 넣어줌.
 // 라우터 모듈인 main.js를 불러와서 app에 전달해줌

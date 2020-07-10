@@ -8,11 +8,7 @@ const checkAll = (e) => {
 };
 
 const updateCheckBox = () => {
-  if (essentialTerms.checked && optionTerms.checked) {
-    allTerms.checked = true;
-  } else {
-    allTerms.checked = false;
-  }
+  allTerms.checked = essentialTerms.checked && optionTerms.checked;
 };
 
 allTerms.addEventListener('click', checkAll);
