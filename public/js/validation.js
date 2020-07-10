@@ -5,6 +5,7 @@ const inputEmailId = document.getElementById('email-id');
 const inputEmailSite = document.getElementById('email-site');
 const inputName = document.getElementById('name');
 const inputPhone = document.getElementById('phone');
+const inputAgreement = document.getElementById('essential-terms');
 
 const errorId = document.getElementById('error-id');
 const errorPassword = document.getElementById('error-password');
@@ -289,8 +290,15 @@ function handleFormSubmit() {
     validateInput(inputText);
   });
   const errorInputs = document.getElementsByClassName('error-input');
+  console.log(inputAgreement.checked);
   if (errorInputs.length > 0) {
     errorInputs[0].focus();
+    return false;
+  } else if (verifyBtn.textContent !== '인증완료') {
+    alert('핸드폰 인증을 완료해주세요.');
+    return false;
+  } else if (!inputAgreement.checked) {
+    alert('약관 필수항목에 동의해주세요.');
     return false;
   } else {
     return true;
