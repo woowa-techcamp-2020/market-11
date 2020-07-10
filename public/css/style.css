@@ -445,6 +445,15 @@ input[type='checkbox']:checked + label::after {
   border-color: #f52926;
 }
 
+.invisible {
+  display: block;
+  visibility: hidden;
+}
+
+#error-id-password {
+  height: 22px;
+}
+
 .main-container #notice {
   font-size: 20px;
   margin-bottom: 20px;
