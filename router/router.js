@@ -10,7 +10,12 @@ module.exports = function (app, db) {
   });
 
   app.get('/login', function (req, res) {
-    res.render('login.pug');
+    const sess = req.session;
+    if (sess.userId) {
+      res.redirect('/');
+    } else {
+      res.render('login.pug');
+    }
   });
 
   app.post('/login', function (req, res) {
