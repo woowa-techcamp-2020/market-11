@@ -4,9 +4,29 @@ const authContainer = document.getElementById('auth-container');
 const authInput = document.getElementById('auth');
 const authBtn = authContainer.lastChild;
 
+let timeout = 120;
+
+const resetTimeout = () => {
+  timeout = 120;
+};
+
+let timeCount = setInterval(() => {
+  timeout--;
+  const min = parseInt(timeout / 60);
+  const sec = timeout % 60;
+  let timeString = `0${min}:${sec > 10 ? sec : `0${sec}`}`;
+  displayTime(timeString);
+  if (timeout === 0) {
+    timeover();
+  }
+}, 1000);
+
 const isValidPhoneNumber = (e) => {
   let input = e.target.value;
-  phoneInput.value = input.replace(/[^0-9]/g, '');
+  phoneInput.value = input.replace(/([^0-9])/g, '');
+  if (phoneInput.value.length > 11) {
+    phoneInput.value = phoneInput.value.substr(0, 11);
+  }
   if (phoneInput.value) {
     verifyBtn.classList.remove('disable');
     verifyBtn.classList.add('enable');
@@ -18,13 +38,24 @@ const isValidPhoneNumber = (e) => {
   }
 };
 
+const checkPhoneLength = () => {
+  if (phoneInput.value.length < 10) {
+    return false;
+  }
+  return true;
+};
+
 const authPhone = () => {
+  if (!checkPhoneLength()) {
+    return;
+  }
   const verifyNum = sendNumber();
   popUpNotice();
   changeButton();
   insertAuthContainer(verifyNum);
   createTimer();
-  startCountDown();
+  resetTimeout();
+  timeCount();
 };
 
 const zeroPad = (num, places) => String(num).padStart(places, '0');
@@ -98,24 +129,15 @@ const authNumberCheck = () => {
 };
 
 const createTimer = () => {
+  const prevTimer = document.querySelector('.timer');
+  if (prevTimer) {
+    console.log('in');
+    prevTimer.remove();
+  }
+
   const timer = document.createElement('span');
   timer.classList.add('timer');
   authContainer.appendChild(timer);
-};
-
-const startCountDown = () => {
-  let timeout = 120;
-  let timeCount = setInterval(() => {
-    timeout--;
-    const min = parseInt(timeout / 60);
-    const sec = timeout % 60;
-    let timeString = `0${min}:${sec > 10 ? sec : `0${sec}`}`;
-    displayTime(timeString);
-    if (timeout === 0) {
-      clearInterval(timeCount);
-      timeover();
-    }
-  }, 1000);
 };
 
 const displayTime = (time) => {
