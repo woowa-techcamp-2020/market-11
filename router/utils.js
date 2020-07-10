@@ -37,7 +37,7 @@ module.exports = {
     const userPassword = req.body['password'];
     const idExistence = await hasId(db, userId);
     if (!idExistence) {
-      res.json({ success: 0 });
+      res.render('login.pug', { error: '존재하지 않는 아이디입니다.' });
       console.log('아이디 없음');
       return;
     }
@@ -49,7 +49,7 @@ module.exports = {
       res.redirect('/');
       console.log('로그인 성공');
     } else {
-      res.render('login.pug');
+      res.render('login.pug', { error: '아이디와 비밀번호를 확인 후 다시 로그인해주세요.' });
       console.log('패스워드 불일치');
     }
   },
