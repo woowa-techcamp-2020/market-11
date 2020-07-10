@@ -28,8 +28,8 @@ inputId.addEventListener('blur', function (event) {
   validateInputId(id);
 });
 
-function validateInputId(id) {
-  const message = validateId(id);
+async function validateInputId(id) {
+  const message = await validateId(id);
   handleErrorMessage(errorId, message);
   handleBorderColor(inputId, message);
   if (message === '') {
@@ -140,19 +140,22 @@ function handleBorderColor(inputDom, message) {
  * @param {string} id
  * @returns {string} 유효한 ID면 빈 문자열, 아닌 경우 에러 문자열 반환
  */
-function validateId(id) {
+async function validateId(id) {
   if (id.length === 0) {
     return '아이디를 입력해주세요.';
   }
-  if (isIdDuplicated(id)) {
-    return '이미 사용중인 아이디 입니다. 다른 아이디를 입력해 주세요.';
-  }
-  const regExp = /^[a-zA-Z0-9_-]{4,20}$/;
-  if (regExp.test(id)) {
-    return '';
-  } else {
-    return '아이디는 영문과 숫자로 4자~20자 사이로 입력해 주세요.';
-  }
+  let message = await isIdDuplicated(id).then(function (idDuplication) {
+    if (idDuplication) {
+      return '이미 사용중인 아이디 입니다. 다른 아이디를 입력해 주세요.';
+    }
+    const regExp = /^[a-zA-Z0-9_-]{4,20}$/;
+    if (regExp.test(id)) {
+      return '';
+    } else {
+      return '아이디는 영문과 숫자로 4자~20자 사이로 입력해 주세요.';
+    }
+  });
+  return message;
 }
 
 /**
