@@ -144,12 +144,33 @@ function validateId(id) {
   if (id.length === 0) {
     return '아이디를 입력해주세요.';
   }
+  if (isIdDuplicated(id)) {
+    return '이미 사용중인 아이디 입니다. 다른 아이디를 입력해 주세요.';
+  }
   const regExp = /^[a-zA-Z0-9_-]{4,20}$/;
   if (regExp.test(id)) {
     return '';
   } else {
     return '아이디는 영문과 숫자로 4자~20자 사이로 입력해 주세요.';
   }
+}
+
+/**
+ * 아이디 중복 체크
+ * @param {string} id
+ * @return {boolean} 중복된 아이디가 있으면 true, 없으면 false 반환
+ */
+async function isIdDuplicated(id) {
+  const body = { userId: id };
+  let response = await fetch('./id-duplication', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  let result = await response.json();
+  return result.idDuplication;
 }
 
 /**

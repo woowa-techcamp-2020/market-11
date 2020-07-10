@@ -53,6 +53,11 @@ module.exports = {
       console.log('패스워드 불일치');
     }
   },
+  checkIdDuplication: async function (req, res, db) {
+    const userId = req.body.userId;
+    const idDuplication = await isIdDuplicated(db, userId);
+    res.json({ idDuplication: idDuplication });
+  },
 };
 
 /**
