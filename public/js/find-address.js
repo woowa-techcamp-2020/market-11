@@ -1,4 +1,4 @@
-const optionInfo = document.getElementById('option-info');
+const zipCode = document.getElementById('zipcode');
 const findAddressBtn = document.getElementById('find-address');
 
 const createModal = () => {
@@ -46,7 +46,7 @@ const execDaumPostcode = (modal, layer) => {
         addr = data.jibunAddress;
       }
 
-      document.getElementById('zipcode').value = data.zonecode;
+      zipcode.value = data.zonecode;
       document.getElementById('address').value = addr;
       document.getElementById('address-detail').focus();
 
@@ -89,4 +89,5 @@ const openAddressModal = (e) => {
   }
 };
 
-optionInfo.addEventListener('click', openAddressModal);
+zipCode.addEventListener('click', openAddressModal);
+findAddressBtn.addEventListener('click', openAddressModal);
