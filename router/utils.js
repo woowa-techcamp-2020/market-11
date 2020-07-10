@@ -22,8 +22,12 @@ module.exports = {
       salt: encryptedPasswordAndSalt.salt,
     };
     db.insert(user, function (err) {
-      const result = { success: 1 };
-      res.json(result);
+      res.render('sign-up-complete.pug', {
+        name: user.name,
+        id: user.id,
+        email: `${user.emailId}@${user.emailSite}`,
+        phone: user.phone,
+      });
       console.log('저장 완료');
     });
   },
