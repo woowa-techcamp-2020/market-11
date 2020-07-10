@@ -44,4 +44,8 @@ module.exports = function (app, db) {
   app.post('/add-user', function (req, res) {
     utils.createUser(req, res, db);
   });
+
+  app.post('/id-duplication', function (req, res) {
+    utils.checkIdDuplication(req, res, db);
+  });
 };
